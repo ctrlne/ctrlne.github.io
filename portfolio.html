@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claire Antonette Mendoza | Data Scientist Portfolio</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Custom styles for the Inter font and theme transitions */
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        /* Custom scrollbar for a more modern look */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f8fafc; }
+        .dark ::-webkit-scrollbar-track { background: #020617; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        .dark ::-webkit-scrollbar-thumb { background: #1e293b; }
+        .text-gradient {
+            background: linear-gradient(to right, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Style for the hero canvas animation */
+        #particle-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.5;
+        }
+        .dark #particle-canvas {
+            opacity: 0.3;
+        }
+        /* Style for the expandable technology list */
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+    <script>
+        // Tailwind CSS configuration for dark mode
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': { light: '#6d28d9', dark: '#c084fc' },
+                        'secondary': { light: '#db2777', dark: '#f9a8d4' },
+                        'bg': { light: '#f8fafc', dark: '#020617' },
+                        'card': { light: '#ffffff', dark: '#0f172a' },
+                        'text': { light: '#1e293b', dark: '#e2e8f0' },
+                        'subtle': { light: '#64748b', dark: '#94a3b8' }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body id="home" class="bg-bg-light dark:bg-bg-dark text-text-light dark:text-text-dark antialiased">
+
+    <!-- Header Section -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-bg-light/80 dark:bg-bg-dark/80 backdrop-blur-sm border-b border-slate-200 dark:border-slate-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-xl font-bold text-text-light dark:text-text-dark">Claire Mendoza</a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#about" class="text-subtle-light dark:text-subtle-dark hover:text-primary-light dark:hover:text-primary-dark transition-colors font-medium">/ about</a>
+                <a href="#projects" class="text-subtle-light dark:text-subtle-dark hover:text-primary-light dark:hover:text-primary-dark transition-colors font-medium">/ projects</a>
+                <a href="#home" class="text-subtle-light dark:text-subtle-dark hover:text-primary-light dark:hover:text-primary-dark transition-colors font-medium">/ contact</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                 <a href="https://github.com/ctrlne" target="_blank" class="text-subtle-light dark:text-subtle-dark hover:text-primary-light dark:hover:text-primary-dark transition-colors">
+                    <i data-lucide="github" class="w-5 h-5"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/claire-antonette-mendoza-5506382b3/" target="_blank" class="text-subtle-light dark:text-subtle-dark hover:text-primary-light dark:hover:text-primary-dark transition-colors">
+                    <i data-lucide="linkedin" class="w-5 h-5"></i>
+                </a>
+                <button id="theme-toggle" class="text-subtle-light dark:text-subtle-dark hover:text-primary-light dark:hover:text-primary-dark transition-colors">
+                    <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
+                    <i data-lucide="moon" class="w-5 h-5 block dark:hidden"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 pt-24">
+
+        <!-- Hero Section -->
+        <section id="hero" class="relative text-center py-24 overflow-hidden">
+            <canvas id="particle-canvas"></canvas>
+            <div class="relative z-10">
+                <h1 class="text-5xl md:text-7xl font-extrabold mb-4">
+                    hi, i'm <span class="text-gradient">claire</span>.
+                </h1>
+                <h2 class="text-2xl md:text-3xl font-semibold text-subtle-light dark:text-subtle-dark mb-8">I build intelligent solutions with data.</h2>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto text-subtle-light dark:text-subtle-dark mb-10">
+                    A final-year Computer Science student specializing in AI, passionate about the entire data lifecycle—from engineering and modeling to creating actionable insights.
+                </p>
+                <a href="mailto:mendozaclaireantonette791@gmail.com" class="bg-primary-light dark:bg-primary-dark text-white dark:text-slate-900 font-semibold py-3 px-8 rounded-lg hover:opacity-90 transition-all duration-300 shadow-lg shadow-primary-light/20 dark:shadow-primary-dark/20 inline-flex items-center gap-2">
+                    <i data-lucide="send" class="w-5 h-5"></i>
+                    Say Hello!
+                </a>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="py-24">
+            <h2 class="text-3xl font-bold text-center mb-16">/ about me</h2>
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+                <div class="md:col-span-1 text-center">
+                    <img src="me.jpg" alt="Claire Antonette Mendoza" class="w-48 h-48 rounded-full mx-auto mb-4 border-4 border-primary-light dark:border-primary-dark shadow-lg">
+                    <h3 class="text-2xl font-bold">Claire Antonette Mendoza</h3>
+                    <p class="text-subtle-light dark:text-subtle-dark">Makati City, Metro Manila</p>
+                </div>
+                <div class="md:col-span-2">
+                    <p class="mb-6 text-lg text-subtle-light dark:text-subtle-dark leading-relaxed">
+                        I'm a final-year student pursuing a <strong>Bachelor of Science in Computer Science, Specializing in A.I.</strong> at <strong>Mapúa University</strong>. My academic journey has been focused on bridging the gap between theory and practice by building complete, functional data solutions from the ground up.
+                    </p>
+                    <p class="mb-8 text-lg text-subtle-light dark:text-subtle-dark leading-relaxed">
+                        I thrive on the entire data lifecycle: from acquiring and cleaning messy, real-world data to building predictive models and creating beautiful, insightful visualizations. My projects reflect this passion, showcasing my ability to not only analyze data but to build the very systems that generate it.
+                    </p>
+                    <h4 class="text-xl font-semibold mb-4">Technologies I've been working with:</h4>
+                    <div class="space-y-4">
+                        <details class="bg-card-light dark:bg-card-dark p-4 rounded-lg border border-slate-200 dark:border-slate-800">
+                            <summary class="font-semibold cursor-pointer flex justify-between items-center">Data Science & ML <i data-lucide="chevron-down" class="w-5 h-5 transition-transform"></i></summary>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <span class="bg-slate-100 dark:bg-slate-700 text-sm font-medium px-3 py-1 rounded-full">Pandas</span>
+                                <span class="bg-slate-100 dark:bg-slate-700 text-sm font-medium px-3 py-1 rounded-full">Scikit-learn</span>
+                                <span class="bg-slate-100 dark:bg-slate-700 text-sm font-medium px-3 py-1 rounded-full">NumPy</span>
+                                <span class="bg-slate-100 dark:bg-slate-700 text-sm font-medium px-3 py-1 rounded-full">Matplotlib</span>
+                                <span class="bg-slate-100 dark:bg-slate-700 text-sm font-medium px-3 py-1 rounded-full">Seaborn</span>
+                                <span class="bg-slate-100 dark:bg-slate-700 text-sm font-medium px-3 py-1 rounded-full">XGBoost</span>
+                                <span class="bg-slate-100 dark:bg-slate-700 text-sm font-medium px-3 py-1 rounded-full">Hugging Face</span>
+                            </div>
+                        </details>
+                        <details class="bg-card-light dark:bg-card-dark p-4 rounded-lg border border-slate-200 dark:border-slate-800">
+                            <summary class="font-semibold cursor-pointer flex justify-between items-center">Databases & BI <i data-lucide="chevron-down" class="w-5 h-5 transition-transform"></i></summary>
+                             <div class="mt-4 flex flex-wrap gap-2">
+                                <span class="bg-slate-100 dark:bg-slate-700 text-sm font-medium px-3 py-1 rounded-full">PostgreSQL</span>
+                                <span class="bg-slate-100 dark:bg-slate-700 text-sm font-medium px-3 py-1 rounded-full">SQL</span>
+                                <span class="bg-slate-100 dark:bg-slate-700 text-sm font-medium px-3 py-1 rounded-full">Power BI</span>
+                                <span class="bg-slate-100 dark:bg-slate-700 text-sm font-medium px-3 py-1 rounded-full">ETL</span>
+                            </div>
+                        </details>
+                         <details class="bg-card-light dark:bg-card-dark p-4 rounded-lg border border-slate-200 dark:border-slate-800">
+                            <summary class="font-semibold cursor-pointer flex justify-between items-center">Web Development <i data-lucide="chevron-down" class="w-5 h-5 transition-transform"></i></summary>
+                             <div class="mt-4 flex flex-wrap gap-2">
+                                <span class="bg-slate-100 dark:bg-slate-700 text-sm font-medium px-3 py-1 rounded-full">JavaScript</span>
+                                <span class="bg-slate-100 dark:bg-slate-700 text-sm font-medium px-3 py-1 rounded-full">HTML & CSS</span>
+                                <span class="bg-slate-100 dark:bg-slate-700 text-sm font-medium px-3 py-1 rounded-full">Node.js</span>
+                                <span class="bg-slate-100 dark:bg-slate-700 text-sm font-medium px-3 py-1 rounded-full">Streamlit</span>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-24">
+            <h2 class="text-3xl font-bold text-center mb-16">/ projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Project Card 1: Salon Analytics -->
+                <div class="bg-card-light dark:bg-card-dark rounded-lg shadow-lg p-6 flex flex-col justify-between hover:shadow-primary-light/20 dark:hover:shadow-primary-dark/20 hover:-translate-y-2 transition-all duration-300 border border-slate-200 dark:border-slate-800">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <i data-lucide="folder-git-2" class="w-10 h-10 text-primary-light dark:text-primary-dark"></i>
+                            <div class="flex space-x-3">
+                                <a href="https://github.com/ctrlne/Tyche-Nails-Dashboard-System-and-Prediction-Model" target="_blank" class="text-subtle-light dark:text-subtle-dark hover:text-primary-light dark:hover:text-primary-dark"><i data-lucide="github" class="w-5 h-5"></i></a>
+                                <a href="#" target="_blank" class="text-subtle-light dark:text-subtle-dark hover:text-primary-light dark:hover:text-primary-dark"><i data-lucide="layout-dashboard" class="w-5 h-5"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Salon Analytics Platform</h3>
+                        <p class="text-subtle-light dark:text-subtle-dark text-sm mb-4">An end-to-end system with a Node.js backend and Power BI dashboard. Includes an ML model to predict client no-shows with 89% accuracy.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 text-xs text-secondary-light dark:text-secondary-dark font-medium">
+                        <span>Full-Stack</span><span>•</span><span>Machine Learning</span><span>•</span><span>Power BI</span>
+                    </div>
+                </div>
+
+                <!-- Project Card 2: Kaggle House Prices -->
+                <div class="bg-card-light dark:bg-card-dark rounded-lg shadow-lg p-6 flex flex-col justify-between hover:shadow-primary-light/20 dark:hover:shadow-primary-dark/20 hover:-translate-y-2 transition-all duration-300 border border-slate-200 dark:border-slate-800">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <i data-lucide="folder-git-2" class="w-10 h-10 text-primary-light dark:text-primary-dark"></i>
+                            <div class="flex space-x-3">
+                                <a href="https://github.com/ctrlne/Kaggle-House-Price-Predictor" target="_blank" class="text-subtle-light dark:text-subtle-dark hover:text-primary-light dark:hover:text-primary-dark"><i data-lucide="github" class="w-5 h-5"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Kaggle: House Price Prediction</h3>
+                        <p class="text-subtle-light dark:text-subtle-dark text-sm mb-4">Advanced regression on a complex dataset. Performed deep feature engineering and trained an XGBoost model with a top RMSE of ~0.12.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 text-xs text-secondary-light dark:text-secondary-dark font-medium">
+                        <span>XGBoost</span><span>•</span><span>Feature Engineering</span><span>•</span><span>Streamlit</span>
+                    </div>
+                </div>
+
+                <!-- Project Card 3: Infectious Disease -->
+                <div class="bg-card-light dark:bg-card-dark rounded-lg shadow-lg p-6 flex flex-col justify-between hover:shadow-primary-light/20 dark:hover:shadow-primary-dark/20 hover:-translate-y-2 transition-all duration-300 border border-slate-200 dark:border-slate-800">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <i data-lucide="folder-git-2" class="w-10 h-10 text-primary-light dark:text-primary-dark"></i>
+                            <div class="flex space-x-3">
+                                <a href="https://github.com/ctrlne/Infectious-Disease-Analysis-Visualization-.git" target="_blank" class="text-subtle-light dark:text-subtle-dark hover:text-primary-light dark:hover:text-primary-dark"><i data-lucide="github" class="w-5 h-5"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Infectious Disease Analysis</h3>
+                        <p class="text-subtle-light dark:text-subtle-dark text-sm mb-4">Scraped a unique dataset using BeautifulSoup and built a classification model to predict diseases from symptoms with 96.5% accuracy.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 text-xs text-secondary-light dark:text-secondary-dark font-medium">
+                        <span>Web Scraping</span><span>•</span><span>Classification</span><span>•</span><span>Power BI</span>
+                    </div>
+                </div>
+                
+                <!-- Project Card 4: Emotion Detection -->
+                <div class="bg-card-light dark:bg-card-dark rounded-lg shadow-lg p-6 flex flex-col justify-between hover:shadow-primary-light/20 dark:hover:shadow-primary-dark/20 hover:-translate-y-2 transition-all duration-300 border border-slate-200 dark:border-slate-800">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <i data-lucide="folder-git-2" class="w-10 h-10 text-primary-light dark:text-primary-dark"></i>
+                            <div class="flex space-x-3">
+                                <a href="https://github.com/ctrlne/EmotionDetection_GoogleColab" target="_blank" class="text-subtle-light dark:text-subtle-dark hover:text-primary-light dark:hover:text-primary-dark"><i data-lucide="github" class="w-5 h-5"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Emotion Detection</h3>
+                        <p class="text-subtle-light dark:text-subtle-dark text-sm mb-4">A data science project using supervised machine learning to detect emotions from text data and a Kaggle dataset using Image Preprocessing, built with Python and the Kaggle API.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 text-xs text-secondary-light dark:text-secondary-dark font-medium">
+                        <span>NLP</span><span>•</span><span>Supervised Learning</span><span>•</span><span>Kaggle API</span>
+                    </div>
+                </div>
+
+                <!-- Project Card 5: Ghibli Website -->
+                <div class="bg-card-light dark:bg-card-dark rounded-lg shadow-lg p-6 flex flex-col justify-between hover:shadow-primary-light/20 dark:hover:shadow-primary-dark/20 hover:-translate-y-2 transition-all duration-300 border border-slate-200 dark:border-slate-800">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <i data-lucide="folder-git-2" class="w-10 h-10 text-primary-light dark:text-primary-dark"></i>
+                            <div class="flex space-x-3">
+                                <a href="https://github.com/ctrlne/Ghibli-Website-Refinement" target="_blank" class="text-subtle-light dark:text-subtle-dark hover:text-primary-light dark:hover:text-primary-dark"><i data-lucide="github" class="w-5 h-5"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Ghibli Website Refinement</h3>
+                        <p class="text-subtle-light dark:text-subtle-dark text-sm mb-4">A refined, personal take on Studio Ghibli's website—built with HTML, CSS, and JavaScript. Fully responsive and inspired by the studio's timeless aesthetic.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 text-xs text-secondary-light dark:text-secondary-dark font-medium">
+                        <span>Frontend Dev</span><span>•</span><span>HTML/CSS</span><span>•</span><span>JavaScript</span>
+                    </div>
+                </div>
+
+                <!-- Project Card 6: Sentiment Analysis -->
+                <div class="bg-card-light dark:bg-card-dark rounded-lg shadow-lg p-6 flex flex-col justify-between hover:shadow-primary-light/20 dark:hover:shadow-primary-dark/20 hover:-translate-y-2 transition-all duration-300 border border-slate-200 dark:border-slate-800">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <i data-lucide="folder-git-2" class="w-10 h-10 text-primary-light dark:text-primary-dark"></i>
+                            <div class="flex space-x-3">
+                                <a href="https://github.com/ctrlne/NLP-Sentiment-Analysis-of-Movie-Reviews" target="_blank" class="text-subtle-light dark:text-subtle-dark hover:text-primary-light dark:hover:text-primary-dark"><i data-lucide="github" class="w-5 h-5"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">NLP Sentiment Analysis</h3>
+                        <p class="text-subtle-light dark:text-subtle-dark text-sm mb-4">A project using a pre-trained DistilBERT model and the Hugging Face library to perform sentiment analysis on the IMDB movie review dataset, achieving 88.1% accuracy.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 text-xs text-secondary-light dark:text-secondary-dark font-medium">
+                        <span>NLP</span><span>•</span><span>Hugging Face</span><span>•</span><span>Deep Learning</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 dark:border-slate-800" id="contact">
+        <div class="container mx-auto px-6 py-8 text-center text-subtle-light dark:text-subtle-dark text-sm">
+            <p>&copy; 2025 Claire Antonette Mendoza. Built with Tailwind CSS.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Dark/Light Mode Toggle Logic
+        const themeToggle = document.getElementById('theme-toggle');
+        const htmlEl = document.documentElement;
+
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            htmlEl.classList.add('dark');
+        } else {
+            htmlEl.classList.remove('dark');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            htmlEl.classList.toggle('dark');
+            localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+        });
+
+        // Smooth Scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Expandable technology list toggle icon rotation
+        document.querySelectorAll('details').forEach((detail) => {
+            detail.addEventListener('toggle', (event) => {
+                const icon = event.target.querySelector('summary i');
+                if (event.target.open) {
+                    icon.style.transform = 'rotate(180deg)';
+                } else {
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            });
+        });
+
+        // Particle Animation Logic
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        
+        function resizeCanvas() {
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+        }
+        
+        class Particle {
+            constructor(x, y, isDark) {
+                this.x = x;
+                this.y = y;
+                this.size = Math.random() * 2 + 1;
+                this.speedX = Math.random() * 2 - 1;
+                this.speedY = Math.random() * 2 - 1;
+                this.color = isDark ? 'rgba(192, 132, 252, 0.8)' : 'rgba(109, 40, 217, 0.8)';
+            }
+            update() {
+                if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
+                if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
+                this.x += this.speedX;
+                this.y += this.speedY;
+            }
+            draw() {
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            const isDark = document.documentElement.classList.contains('dark');
+            const numberOfParticles = window.innerWidth < 768 ? 30 : 60;
+            for (let i = 0; i < numberOfParticles; i++) {
+                particles.push(new Particle(Math.random() * canvas.width, Math.random() * canvas.height, isDark));
+            }
+        }
+
+        function handleParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+                for (let j = i; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < 100) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = particles[i].color.replace('0.8', '0.1');
+                        ctx.lineWidth = 0.5;
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(handleParticles);
+        }
+        
+        window.addEventListener('resize', () => {
+            resizeCanvas();
+            initParticles();
+        });
+
+        // Initialize on load
+        resizeCanvas();
+        initParticles();
+        handleParticles();
+
+        // Re-initialize particles on theme change
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.attributeName === 'class') {
+                    initParticles();
+                }
+            });
+        });
+        observer.observe(htmlEl, { attributes: true });
+
+    </script>
+</body>
+</html>
