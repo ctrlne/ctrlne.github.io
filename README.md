@@ -1,5 +1,5 @@
 # Personal Portfolio Website
-This repository contains the source code for my personal portfolio website, which is live at ctrlne.github.io.
+This repository contains the source code for my personal portfolio website, which is live at [ctrlne.github.io.](https://ctrlne.github.io/)
 
 ## Overview
 This is a static, single-page portfolio designed to showcase my skills and projects as a data scientist and developer. It was built from scratch to be clean, modern, and fully responsive.
